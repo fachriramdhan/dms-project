@@ -194,7 +194,3 @@ http://localhost:5173
   - UUID sebagai primary key untuk keamanan dan konsistensi data
 
 ---
-
-## 📌 Notes
-
-Proyek ini dibuat sebagai **technical test / portfolio project** yang merepresentasikan arsitektur dan pola yang umum digunakan pada sistem enterprise.
