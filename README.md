@@ -71,7 +71,7 @@ dms-project/
     │   ├── services/       # Axios API integrations
     │   ├── hooks/          # Custom business logic hooks
     │   └── contexts/       # Global state (Auth & Theme)
-
+```
 
 ## 🗄️ Database Schema
 Struktur relasi tabel untuk mendukung audit trail dan sinkronisasi status:
@@ -105,6 +105,7 @@ NOTIFICATIONS (Alert System)
 ├── id (UUID)
 ├── type | title | message | isRead
 └── userId (FK to USERS)
+```
 
 ## 🛠️ Installation & Setup
 1. Database Setup
@@ -115,6 +116,7 @@ Masuk ke folder backend, install dependency, dan jalankan server:
 cd backend
 npm install
 npm run start:dev
+```
 Catatan: Pastikan file .env sudah dikonfigurasi dengan DB_HOST, DB_USER, dan DB_PASS yang sesuai.
 
 3. Frontend Setup
@@ -123,7 +125,7 @@ Masuk ke folder frontend, install dependency, dan jalankan aplikasi:
 cd frontend
 npm install
 npm run dev
-
+```
 
 ## 🚀 Key Technical Highlights
 
