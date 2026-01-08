@@ -47,68 +47,88 @@ graph TD
     M --> N
 ```
 
-🏗️ Project Structure
-Proyek ini menggunakan arsitektur monorepo sederhana yang memisahkan Backend dan Frontend dengan jelas:
+## 🏗️ Project Structure
 
+Proyek ini menggunakan arsitektur monorepo yang memisahkan Backend dan Frontend secara modular:
+
+````text
 dms-project/
-├── backend/ # NestJS API (Enterprise Level)
-│ ├── src/
-│ │ ├── auth/ # Authentication & Security Guard
-│ │ ├── users/ # User management
-│ │ ├── documents/ # Core Document management
-│ │ ├── approvals/ # Workflow approval engine
-│ │ ├── notifications/ # Real-time event notifications
-│ │ ├── storage/ # Abstracted File storage service
-│ │ ├── common/ # Shared utilities & interceptors
-│ │ └── database/ # TypeORM configuration
-│ └── uploads/ # Document physical storage
-└── frontend/ # React + Vite (Modern UI)
-├── src/
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # View/Page modules
-│ ├── services/ # Axios API integrations
-│ ├── hooks/ # Custom business logic hooks
-│ └── contexts/ # Global state (Auth & Theme)
+├── backend/                # NestJS API (Enterprise Level)
+│   ├── src/
+│   │   ├── auth/           # Authentication & Security Guard
+│   │   ├── users/          # User management
+│   │   ├── documents/      # Core Document management
+│   │   ├── approvals/      # Workflow approval engine
+│   │   ├── notifications/  # Real-time event notifications
+│   │   ├── storage/        # Abstracted File storage service
+│   │   ├── common/         # Shared utilities & interceptors
+│   │   └── database/       # TypeORM configuration
+│   └── uploads/            # Document physical storage
+└── frontend/               # React + Vite (Modern UI)
+    ├── src/
+    │   ├── components/     # Reusable UI components
+    │   ├── pages/          # View/Page modules
+    │   ├── services/       # Axios API integrations
+    │   ├── hooks/          # Custom business logic hooks
+    │   └── contexts/       # Global state (Auth & Theme)
 
-🗄️ Database Schema
-Relasi database dirancang untuk mendukung audit trail dan sinkronisasi status dokumen:
 
+## 🗄️ Database Schema
+Struktur relasi tabel untuk mendukung audit trail dan sinkronisasi status:
+
+```text
 USERS (Master Data)
-├── id (UUID) | email | password (Bcrypt) | fullName | role (USER/ADMIN)
+├── id (UUID)
+├── email (unique)
+├── password (Bcrypt)
+├── fullName
+└── role (USER/ADMIN)
 
 DOCUMENTS (File Metadata)
-├── id (UUID) | title | description | documentType | fileUrl | fileName
-├── fileSize | version (Optimistic Lock) | status (ACTIVE/PENDING/DELETED)
+├── id (UUID)
+├── title | description | documentType
+├── fileUrl | fileName | fileSize
+├── version (Optimistic Lock)
+├── status (ACTIVE/PENDING/DELETED)
 └── createdBy (FK to USERS)
 
 APPROVALS (Workflow Tracking)
-├── id (UUID) | type (DELETE/REPLACE) | status (PENDING/APPROVED/REJECTED)
-├── reason | adminComment | documentId (FK) | requestedBy (FK) | reviewedBy (FK)
+├── id (UUID)
+├── type (DELETE/REPLACE)
+├── status (PENDING/APPROVED/REJECTED)
+├── reason | adminComment
+├── documentId (FK to DOCUMENTS)
+├── requestedBy (FK to USERS)
+└── reviewedBy (FK to USERS)
 
 NOTIFICATIONS (Alert System)
-├── id (UUID) | type | title | message | isRead | userId (FK)
+├── id (UUID)
+├── type | title | message | isRead
+└── userId (FK to USERS)
 
-🛠️ Installation & Setup
-
+## 🛠️ Installation & Setup
 1. Database Setup
-   Buat database MySQL bernama dms_project.
-
+Buat database MySQL bernama dms_project melalui phpMyAdmin atau MySQL Client.
 2. Backend Setup
-   cd backend
-   npm install
-
-# Buat file .env dan sesuaikan DB_HOST, DB_USER, DB_PASS
-
+Masuk ke folder backend, install dependency, dan jalankan server:
+```text
+cd backend
+npm install
 npm run start:dev
+Catatan: Pastikan file .env sudah dikonfigurasi dengan DB_HOST, DB_USER, dan DB_PASS yang sesuai.
 
 3. Frontend Setup
-   cd frontend
-   npm install
-   npm run dev
+Masuk ke folder frontend, install dependency, dan jalankan aplikasi:
+```text
+cd frontend
+npm install
+npm run dev
 
-🚀 Key Technical Highlights
+
+## 🚀 Key Technical Highlights
 
 1. Optimistic Locking: Implementasi kolom version pada dokumen untuk mencegah race condition.
 2. Role-Based Access Control (RBAC): Proteksi endpoint menggunakan JWT Guard sesuai peran User/Admin.
 3. Real-time Notification: Mekanisme polling (extensible to WebSocket) untuk update status approval.
 4. Security: Hashing Bcrypt untuk kredensial dan UUID untuk identitas unik data.
+````
