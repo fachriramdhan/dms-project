@@ -131,7 +131,7 @@ Buat database **MySQL** dengan nama:
 dms_project
 ```
 
-Database dapat dibuat melalui **phpMyAdmin** atau **MySQL Client**.
+Database dapat dibuat melalui **phpMyAdmin** atau **MySQL Client**. saya menggunakan MySQL MAMP
 
 ---
 
