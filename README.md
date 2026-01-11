@@ -4,7 +4,7 @@ DMS adalah aplikasi pengelolaan dokumen berbasis web yang dirancang dengan fokus
 
 ---
 
-> **Enterprise-Ready Document Management Platform**
+**Enterprise-Ready Document Management Platform**
 
 ![NestJS](https://img.shields.io/badge/NestJS-10-E0234E?logo=nestjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
