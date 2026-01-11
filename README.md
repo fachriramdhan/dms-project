@@ -4,6 +4,83 @@ DMS adalah aplikasi pengelolaan dokumen berbasis web yang dirancang dengan fokus
 
 ---
 
+> **Enterprise-ready Document Management System**  
+> Built with modern backend & frontend technologies for secure document handling, approval workflow, and scalability.
+
+![NestJS](https://img.shields.io/badge/NestJS-10-E0234E?logo=nestjs&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8-00758F?logo=mysql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+---
+
+
+## 🚀 Technology Stack
+
+### 🧠 Backend
+<p>
+  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeORM-262627?style=for-the-badge&logo=typeorm&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens" />
+  <img src="https://img.shields.io/badge/Passport-34E27A?style=for-the-badge&logo=passport&logoColor=black" />
+  <img src="https://img.shields.io/badge/Bull-FF6A00?style=for-the-badge&logo=redis&logoColor=white" />
+</p>
+
+- **NestJS** – Modular & scalable backend framework
+- **TypeORM** – Database abstraction
+- **MySQL** – Relational database
+- **JWT & Passport** – Authentication & authorization
+- **Bull + Redis** – Background jobs & queue processing
+- **Multer** – File upload handling
+
+---
+
+### 🎨 Frontend
+<p>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" />
+  <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" />
+</p>
+
+- **React 18** – Component-based UI
+- **React Router** – Client-side routing
+- **Tailwind CSS** – Utility-first styling
+- **Axios** – HTTP client
+- **React Hook Form** – Form handling & validation
+
+---
+
+### 🧰 Tooling & Quality
+- **TypeScript** (Backend & Frontend)
+- **Jest & Supertest** – Unit & integration testing
+- **ESLint & Prettier** – Code quality & formatting
+- **Production-ready build pipeline**
+
+---
+
+## 🏗️ System Architecture
+
+```text
+[ React + Tailwind ]
+          |
+          | REST API
+          |
+[ NestJS Backend ]
+          |
+          | ORM
+          |
+[ MySQL Database ]
+          |
+          | Queue / Cache
+          |
+[ Redis + Bull ]
+
+---
+
 ## 📸 App Preview
 
 |              User Dashboard               |         Admin Approval Console          |
