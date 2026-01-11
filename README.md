@@ -4,13 +4,16 @@ DMS adalah aplikasi pengelolaan dokumen berbasis web yang dirancang dengan fokus
 
 ---
 
-> **Enterprise-ready Document Management System**  
+> **Enterprise-Ready Document Management Platform**
+
 ![NestJS](https://img.shields.io/badge/NestJS-10-E0234E?logo=nestjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-8-00758F?logo=mysql&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+---
 
 ## 🚀 Technology Stack
 
@@ -24,6 +27,14 @@ DMS adalah aplikasi pengelolaan dokumen berbasis web yang dirancang dengan fokus
   <img src="https://img.shields.io/badge/Bull-FF6A00?style=for-the-badge&logo=redis&logoColor=white" />
 </p>
 
+- Modular & scalable **NestJS architecture**
+- Secure authentication menggunakan **JWT + Passport**
+- Relational database management via **TypeORM & MySQL**
+- Background job & approval queue menggunakan **Bull + Redis**
+- File upload & storage abstraction
+
+---
+
 ### 🎨 Frontend
 <p>
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
@@ -31,6 +42,11 @@ DMS adalah aplikasi pengelolaan dokumen berbasis web yang dirancang dengan fokus
   <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
   <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" />
 </p>
+
+- **React 18** dengan pendekatan component-based
+- Client-side routing menggunakan **React Router**
+- UI styling modern dengan **Tailwind CSS**
+- Integrasi API via **Axios**
 
 
 ---
